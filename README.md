@@ -44,7 +44,7 @@ Django rest framework 3.12
 
 ### Запуск проекта в Docker
 
-Создать файл ./infra/.env c необходимыми переменными
+Создать файл ./api_yamdb/.env c необходимыми переменными
 DB_ENGINE=django.db.backends.postgresql 
 DB_NAME=postgres 
 POSTGRES_USER=postgres 
