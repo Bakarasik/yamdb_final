@@ -78,6 +78,11 @@ SECRET_KEY=***
   docker-compose exec web python manage.py loaddata fixtures.json
 ```
 
+Посмотреть сайт в работе
+```html
+  https://rinvi.hopto.org 
+```
+
 ### Авторы: 
 - [Екатерина Серова](https://github.com/EISerova/),
 - [Анна Бакарасова](https://github.com/Bakarasik),
