@@ -33,7 +33,7 @@ jobs:
         python -m flake8
         # перейти в папку, содержащую manage.py — 
         #<infra_actions>/<папка_проекта>/manage.py
-        cd infra_project/
+        cd api_yamdb/
         # запустить написанные разработчиком тесты
         python manage.py test
   build_and_push_to_docker_hub:
@@ -59,7 +59,7 @@ jobs:
 
         with:
           push: true
-          tags: rinvitto/infra_action:latest
+          tags: rinvitto/api_yamdb:latest
   deploy:
     runs-on: ubuntu-latest
     needs: build_and_push_to_docker_hub
@@ -73,10 +73,10 @@ jobs:
         passphrase: ${{ secrets.PASSPHRASE }} # Если ваш ssh-ключ защищён фразой-паролем
         script: |
           # Выполняет pull образа с DockerHub
-          sudo docker pull rinvitto/infra_action:latest
+          sudo docker pull rinvitto/api_yamdb:latest
           #остановка всех контейнеров
           sudo docker stop $(sudo docker ps -a -q)
-          sudo docker run --rm -d -p 5000:5000 rinvitto/infra_action:latest 
+          sudo docker run --rm -d -p 5000:5000 rinvitto/api_yamdb:latest
   send_message:
     runs-on: ubuntu-latest
     needs: deploy
