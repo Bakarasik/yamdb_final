@@ -2,6 +2,9 @@ name: Django-app workflow
 
 on: [push]
 
+env: 
+  SECRET_KEY: ${{ secrets.SECRET_KEY }}
+
 jobs:
   tests:
     # «Раннер» — создание изолированного окружения с последней версией Ubuntu 
@@ -25,11 +28,6 @@ jobs:
         pip install flake8 pep8-naming flake8-broken-line flake8-return flake8-isort
         cd api_yamdb/
         pip install -r requirements.txt
-    - name: 'Create env file'
-      run: |
-        touch .env
-        echo API_KEY=${{ secrets.SECRET_KEY }} >> .env
-        cat .env
     - name: Test with flake8 and django tests
       run: |
         python -m flake8
