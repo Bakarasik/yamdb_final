@@ -46,11 +46,10 @@ class CategoryGenreViewSet(CreateDestroyListMixin, GenericViewSet):
 @api_view(['POST'])
 @permission_classes([AllowAny])
 def user_signup(request):
-    """
-    Регистрация новых пользователей
-    и отправка кода подтвержения на почту.
-    """
+    """Регистрация новых пользователей.
 
+    Отправка кода подтвержения на почту.
+    """
     serializer = SignUpSerializer(data=request.data)
     serializer.is_valid(raise_exception=True)
 
@@ -78,7 +77,6 @@ def user_signup(request):
 @permission_classes([AllowAny])
 def user_auth(request):
     """Получение пользователем токена."""
-
     serializer = TokenSerializer(data=request.data)
     serializer.is_valid(raise_exception=True)
     user = get_object_or_404(
@@ -161,8 +159,8 @@ class ReviewViewSet(ModelViewSet):
         return get_object_or_404(Title, id=self.kwargs.get('title_id'))
 
     def perform_create(self, serializer):
-        """
-        Создает обзор к произведению.
+        """Создает обзор к произведению.
+
         Автором обзора автоматически устанавливается пользователь.
         """
         serializer.save(author=self.request.user, title=self.get_title())
@@ -189,8 +187,8 @@ class CommentViewSet(ModelViewSet):
         )
 
     def perform_create(self, serializer):
-        """
-        Создает комментарий к обзору.
+        """Создает комментарий к обзору.
+
         Автором комментария автоматически устанавливается пользователь.
         """
         serializer.save(

@@ -12,17 +12,14 @@ from api_yamdb.settings import (
 
 def create_confirmation_code():
     """Создние кода подтверждения."""
-
-    code = ''.join(
+    return ''.join(
         random.choice(CONFIRMATION_CODE_CHARACTERS)
         for _ in range(CONFIRMATION_CODE_LENGTH)
     )
-    return code
 
 
 def send_email(email, confirmation_code, name):
     """Отправка пользователю письма с кодом подтверждения."""
-
     send_mail(
         'Регистрация на сайте.',
         f'Здравствуйте, {name}, ваш код подтверждения: {confirmation_code}.',
@@ -34,6 +31,5 @@ def send_email(email, confirmation_code, name):
 
 def get_tokens_for_user(user):
     """Получение токена для авторизации."""
-
     access = AccessToken.for_user(user)
     return {'token': str(access)}

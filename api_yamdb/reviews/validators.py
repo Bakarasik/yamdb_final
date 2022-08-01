@@ -12,7 +12,6 @@ class RegexUsernameValidator(UnicodeUsernameValidator):
 
 def validate_username_not_me(value):
     """Запрет на создание пользователя с username - me."""
-
     if value == 'me':
         raise ValidationError('Имя пользователя me запрещено.')
     return value
@@ -20,7 +19,6 @@ def validate_username_not_me(value):
 
 def validate_year(value):
     """Проверка, что год выхода произведения не позже текущего."""
-
     if value > datetime.now().year:
         message = f'{value} год еще не наступил.'
         raise ValidationError(message)
