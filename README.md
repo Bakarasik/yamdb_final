@@ -1,6 +1,6 @@
 # REST API YaMDB
 ![DjangoREST](https://img.shields.io/badge/DJANGO-REST-ff1709?style=for-the-badge&logo=django&logoColor=white&color=ff1709&labelColor=gray) ![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white) ![Nginx](https://img.shields.io/badge/nginx-%23009639.svg?style=for-the-badge&logo=nginx&logoColor=white)
-![yamdb_workflow](https://github.com/Bakarasik/yamdb_final/actions/workflows/yamdb_workflow/badge.svg)
+![Django-app workflow](https://github.com/Bakarasik/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
 ### Описание:
 API для базы данных с отзывами на фильмы, музыку, сериалы и другие прозведения. 
 Учебный проект, создан командой учеников Яндекс.Практикумы.
