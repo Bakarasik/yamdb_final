@@ -72,6 +72,7 @@ jobs:
           script: |
             sudo docker-compose stop
             sudo docker-compose rm web
+            cd ..
             mkdir api_yamdb/
             cd api_yamdb/
             touch .env
@@ -81,7 +82,7 @@ jobs:
             echo POSTGRES_PASSWORD=${{ secrets.POSTGRES_PASSWORD }} >> .env
             echo DB_HOST=${{ secrets.DB_HOST }} >> .env
             echo DB_PORT=${{ secrets.DB_PORT }} >> .env
-            cd ..
+            cd ../${{ secrets.USER }}/
             sudo docker-compose up -d 
   send_message:
     runs-on: ubuntu-latest
