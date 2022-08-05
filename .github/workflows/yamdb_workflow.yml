@@ -73,7 +73,7 @@ jobs:
             sudo docker-compose stop
             sudo docker-compose rm web
             cd ..
-            mkdir api_yamdb/
+            sudo mkdir api_yamdb/
             cd api_yamdb/
             touch .env
             echo DB_ENGINE=${{ secrets.DB_ENGINE }} >> .env
