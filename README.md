@@ -80,7 +80,7 @@ SECRET_KEY=***
 
 Посмотреть сайт в работе
 ```html
-  https://rinvi.hopto.org 
+  http://yamdb.sytes.net/api/v1/
 ```
 
 ### Авторы: 
